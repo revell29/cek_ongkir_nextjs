@@ -34,7 +34,7 @@ function Home(props) {
     const cekOngkir = (e) => {
         setLoading(true);
         axios
-            .post("https://cekresi-ongkir-indonesia-4yo61j1y7.vercel.app/cek_harga", {
+            .post("https://ongkir.apsyadira.com/cek_harga", {
                 kota_asal: kotaAsal,
                 type_asal: "city",
                 kota_tujuan: kotaTujuan,
@@ -51,7 +51,7 @@ function Home(props) {
         e.preventDefault();
         setError(false);
         axios
-            .post("https://cekresi-ongkir-indonesia.revell29.vercel.app/check_resi", {
+            .post("https://ongkir.apsyadira.com/check_resi", {
                 resi: data.resi,
                 kurir: data.kurir,
             })
@@ -66,7 +66,7 @@ function Home(props) {
     };
 
     useEffect(() => {
-        axios.get("https://cekresi-ongkir-indonesia.revell29.vercel.app/kota").then((res) => setKota(res.data.data));
+        axios.get("https://ongkir.apsyadira.com/kota").then((res) => setKota(res.data.data));
     }, []);
 
     return (
